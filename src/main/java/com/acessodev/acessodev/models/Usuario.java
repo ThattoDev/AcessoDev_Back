@@ -8,6 +8,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.persistence.Column;
 
 @Entity
 @Table(name = "tb_usuario")
@@ -16,17 +17,23 @@ public class Usuario implements Serializable {
     private static final long serialVersionUID = 1L;
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "Id")
     private int id;
 
+    @Column(name = "nome")
     private String nome;
 
+    @Column(name = "email")
     private String email;
 
+    @Column(name = "senha")
     private String senha;
 
+    @Column(name = "observacao")
     private String observacao;
 
+    @Column(name = "data_nascimento")
     private Date data_nascimento;
 
 
